@@ -1,0 +1,2 @@
+a4188c055e41d7c62e2edf659f0623699aa34d5d8ddb64ea8502dc2e9a77551b  dsh-purge-community-1.7.12.tgz
+a4188c055e41d7c62e2edf659f0623699aa34d5d8ddb64ea8502dc2e9a77551b  dsh-purge-community.tgz

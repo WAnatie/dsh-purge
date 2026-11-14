@@ -1,0 +1,2 @@
+feb960b44096dfe38c32e12b1e16a1648ca35ba65bd5180b1f2d226915cb7b1a  dsh-purge-community-1.7.11.tgz
+feb960b44096dfe38c32e12b1e16a1648ca35ba65bd5180b1f2d226915cb7b1a  dsh-purge-community.tgz
