@@ -1,0 +1,2 @@
+# releases/ 下归档的是发布产物，需要纳入版本库（覆盖根 .gitignore 的 *.tgz）
+!*.tgz
