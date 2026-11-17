@@ -1,36 +1,34 @@
-# dsh-purge 版本归档（更新日志 + 安装文件）
+# dsh-purge Community 发布归档
 
-来源仓库：<https://github.com/kingcharleslzy-ai/dsh-purge>（MIT License）
-
+上游仓库：[kingcharleslzy-ai/dsh-purge](https://github.com/kingcharleslzy-ai/dsh-purge)  
 归档范围：**v1.6.101 → v1.7.18**，共 **9** 个版本。
 
-目录名以 **原仓库 `published_at`(UTC)** 为前缀，因此按名称升序排列即等于原仓库的发布时间顺序；下方表格按发布时间**倒序**（最新在上），与原仓库 Releases 页面一致。
+本目录按上游 **发布时间（published_at, UTC）** 排列。目录名以时间戳开头，
+因此按名称排序即等于原仓库的时间线顺序（tag 名本身无法正确排序：
+`v1.6.101` 与 `v1.7.x` 的词法序不等于时间序）。
 
-## 时间线（新 → 旧）
+每个目录内含：`CHANGELOG.md`（该版本更新日志）、两个安装包 `.tgz`、`SHA256SUMS.txt`。
+同样的四个文件也作为 GitHub Release 附件上传，两者的 SHA256 完全一致。
 
-| # | 版本 | 原发布时间 (UTC) | 安装包 | 大小 | SHA256 | 目录 |
-|---|---|---|---|---|---|---|
-| 1 | `v1.7.18` | 2026-11-16T08:15:03Z | `dsh-purge-community-1.7.18.tgz` | 2200.8 KB | `7a1f102e378540c790116c32752e5cfda1068d1b21333ee9b052d6ea3f43b084` | [`2026-11-16T08-15-03Z_v1.7.18/`](./2026-11-16T08-15-03Z_v1.7.18) |
-| 2 | `v1.7.17` | 2026-11-16T07:10:21Z | `dsh-purge-community-1.7.17.tgz` | 2169.9 KB | `a8db8b6a7249fef226c394c5be1eddf0a154a36019a2704b9ed6f5faafba58a9` | [`2026-11-16T07-10-21Z_v1.7.17/`](./2026-11-16T07-10-21Z_v1.7.17) |
-| 3 | `v1.7.16` | 2026-11-16T06:53:11Z | `dsh-purge-community-1.7.16.tgz` | 2169.5 KB | `7c6a0c81b6a33680fe6dcf6aec9c097592727860803b36890a95f7cc8e5ddc8f` | [`2026-11-16T06-53-11Z_v1.7.16/`](./2026-11-16T06-53-11Z_v1.7.16) |
-| 4 | `v1.7.15` | 2026-11-16T06:00:29Z | `dsh-purge-community-1.7.15.tgz` | 2166.6 KB | `60ac160d84de731aeb420ed798c1e7f917a457f97aab10056c3c4ef2dcec6a85` | [`2026-11-16T06-00-29Z_v1.7.15/`](./2026-11-16T06-00-29Z_v1.7.15) |
-| 5 | `v1.7.14` | 2026-11-13T19:07:40Z | `dsh-purge-community-1.7.14.tgz` | 2157.6 KB | `4dcbb23decbc80fa29455db62e175747d2bbd9c0b3dc3baf630431d158055bf0` | [`2026-11-13T19-07-40Z_v1.7.14/`](./2026-11-13T19-07-40Z_v1.7.14) |
-| 6 | `v1.7.13` | 2026-11-13T17:53:15Z | `dsh-purge-community-1.7.13.tgz` | 2085.2 KB | `c64284c77c3d88e36c99222c8e00564aa965c90e50d990752f45f72ccb59cb6d` | [`2026-11-13T17-53-15Z_v1.7.13/`](./2026-11-13T17-53-15Z_v1.7.13) |
-| 7 | `v1.7.12` | 2026-11-13T17:21:39Z | `dsh-purge-community-1.7.12.tgz` | 2083.2 KB | `a4188c055e41d7c62e2edf659f0623699aa34d5d8ddb64ea8502dc2e9a77551b` | [`2026-11-13T17-21-39Z_v1.7.12/`](./2026-11-13T17-21-39Z_v1.7.12) |
-| 8 | `v1.7.11` | 2026-11-13T16:25:43Z | `dsh-purge-community-1.7.11.tgz` | 2080.0 KB | `feb960b44096dfe38c32e12b1e16a1648ca35ba65bd5180b1f2d226915cb7b1a` | [`2026-11-13T16-25-43Z_v1.7.11/`](./2026-11-13T16-25-43Z_v1.7.11) |
-| 9 | `v1.6.101` | 2026-11-13T15:01:35Z | `dsh-purge-community-1.6.101.tgz` | 2079.0 KB | `bcce0e3caeb4d9022a268cd71c1a7a8dd772556cebcb2e2e0acd8f215eda1930` | [`2026-11-13T15-01-35Z_v1.6.101/`](./2026-11-13T15-01-35Z_v1.6.101) |
+## 版本总表（新 → 旧）
 
-## 每版内容
+| 发布时间 (UTC) | 版本 | 安装包 | 大小 | SHA256 |
+|---|---|---|---|---|
+| 2026-11-16T08:15:03Z | [v1.7.18](releases/2026-11-16T08-15-03Z_v1.7.18) | `dsh-purge-community-1.7.18.tgz` | 2200.8 KB | `7a1f102e378540c7…` |
+| 2026-11-16T07:10:21Z | [v1.7.17](releases/2026-11-16T07-10-21Z_v1.7.17) | `dsh-purge-community-1.7.17.tgz` | 2169.9 KB | `a8db8b6a7249fef2…` |
+| 2026-11-16T06:53:11Z | [v1.7.16](releases/2026-11-16T06-53-11Z_v1.7.16) | `dsh-purge-community-1.7.16.tgz` | 2169.5 KB | `7c6a0c81b6a33680…` |
+| 2026-11-16T06:00:29Z | [v1.7.15](releases/2026-11-16T06-00-29Z_v1.7.15) | `dsh-purge-community-1.7.15.tgz` | 2166.6 KB | `60ac160d84de731a…` |
+| 2026-11-13T19:07:40Z | [v1.7.14](releases/2026-11-13T19-07-40Z_v1.7.14) | `dsh-purge-community-1.7.14.tgz` | 2157.6 KB | `4dcbb23decbc80fa…` |
+| 2026-11-13T17:53:15Z | [v1.7.13](releases/2026-11-13T17-53-15Z_v1.7.13) | `dsh-purge-community-1.7.13.tgz` | 2085.2 KB | `c64284c77c3d88e3…` |
+| 2026-11-13T17:21:39Z | [v1.7.12](releases/2026-11-13T17-21-39Z_v1.7.12) | `dsh-purge-community-1.7.12.tgz` | 2083.2 KB | `a4188c055e41d7c6…` |
+| 2026-11-13T16:25:43Z | [v1.7.11](releases/2026-11-13T16-25-43Z_v1.7.11) | `dsh-purge-community-1.7.11.tgz` | 2080.0 KB | `feb960b44096dfe3…` |
+| 2026-11-13T15:01:35Z | [v1.6.101](releases/2026-11-13T15-01-35Z_v1.6.101) | `dsh-purge-community-1.6.101.tgz` | 2079.0 KB | `bcce0e3caeb4d902…` |
 
-### v1.7.18 — dsh-purge Community 1.7.18
+## 各版本更新日志
 
-- 原发布时间：2026-11-16T08:15:03Z
-- SHA256：`7a1f102e378540c790116c32752e5cfda1068d1b21333ee9b052d6ea3f43b084`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.18.tgz`、`dsh-purge-community.tgz`
+<details>
+<summary><b>v1.7.18</b> — 2026-11-16T08:15:03Z</summary>
 
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.18
 
 ## 变化
@@ -78,19 +76,12 @@
 
 - DSH Desktop `0.2.2-rc.3`（rc.1 / rc.2、`0.2.1-rc.1`、`rc.2`、`rc.3`、`rc.5` 同样通过）。
 - Node ≥ 18。
-```
 
 </details>
 
-### v1.7.17 — dsh-purge Community 1.7.17
+<details>
+<summary><b>v1.7.17</b> — 2026-11-16T07:10:21Z</summary>
 
-- 原发布时间：2026-11-16T07:10:21Z
-- SHA256：`a8db8b6a7249fef226c394c5be1eddf0a154a36019a2704b9ed6f5faafba58a9`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.17.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.17
 
 - **推理先于正文时不再漏检**：此前流以 `reasoning-delta` 开头时，拒绝检测会立刻结束缓冲，正文里的拒绝不再触发重试。现在会继续缓冲到正文/工具调用/结束，或推理超过 16k 字符，才做判定。
@@ -102,19 +93,12 @@
 验证：692 项测试通过 / 30 平台跳过；面板 0 失败；UI、客户端一致性、发行包 smoke 通过。
 
 完整历史见 [release-notes.md](https://github.com/kingcharleslzy-ai/dsh-purge/blob/master/release-notes.md)。
-```
 
 </details>
 
-### v1.7.16 — dsh-purge Community 1.7.16
+<details>
+<summary><b>v1.7.16</b> — 2026-11-16T06:53:11Z</summary>
 
-- 原发布时间：2026-11-16T06:53:11Z
-- SHA256：`7c6a0c81b6a33680fe6dcf6aec9c097592727860803b36890a95f7cc8e5ddc8f`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.16.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.16
 
 - **dsh-go 宿主锚点（#238）**：手机本机引擎在 `steer` 分支前插入生命周期闸门后，`#90` 的三行锚点不再匹配。现在同时接受裸分支与带闸门分支，`#90` 不再误报失败；`#74` 的同类锚点一并识别。
@@ -125,19 +109,12 @@
 验证：691 项测试通过 / 30 平台跳过；面板 0 失败；客户端一致性、UI、发行包 smoke 通过。
 
 完整历史见 [release-notes.md](https://github.com/kingcharleslzy-ai/dsh-purge/blob/master/release-notes.md)。
-```
 
 </details>
 
-### v1.7.15 — dsh-purge Community 1.7.15
+<details>
+<summary><b>v1.7.15</b> — 2026-11-16T06:00:29Z</summary>
 
-- 原发布时间：2026-11-16T06:00:29Z
-- SHA256：`60ac160d84de731aeb420ed798c1e7f917a457f97aab10056c3c4ef2dcec6a85`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.15.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.15
 
 - **保留宿主权限（#240）**：新会话沿用 DSH 选择的权限。14 条会改变权限默认值或执行边界的补丁改为显式选择，只有 `tuning.extraPatches` 明确启用才生效。
@@ -149,19 +126,12 @@
 验证：659 项测试通过 / 29 平台跳过；面板 0 失败；权限迁移、隔离文件/进程边界、签名 sidecar 回归通过；macOS 与 Windows 11 实测见 PR 记录。
 
 完整历史见 [release-notes.md](https://github.com/kingcharleslzy-ai/dsh-purge/blob/master/release-notes.md)。
-```
 
 </details>
 
-### v1.7.14 — dsh-purge Community 1.7.14
+<details>
+<summary><b>v1.7.14</b> — 2026-11-13T19:07:40Z</summary>
 
-- 原发布时间：2026-11-13T19:07:40Z
-- SHA256：`4dcbb23decbc80fa29455db62e175747d2bbd9c0b3dc3baf630431d158055bf0`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.14.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.14
 
 - **侧栏与插件详情共享设置（#220）**：两个入口挂载同一个现有设置组件；在侧栏改更新间隔，详情页立即可见，反向亦然。同时打开两个组件、行详情重新挂载都从磁盘读取已保存值。维护页同步更新偏好并合并重复错误，独立错误保留。
@@ -171,19 +141,12 @@
 验证：650 项测试通过 / 29 平台跳过；面板测试 0 失败；Chrome 实测“侧栏 → 详情 → 侧栏”与行详情重新挂载（24 小时从磁盘恢复）；UI、客户端一致性、发行包 smoke 通过。
 
 完整历史见 [release-notes.md](https://github.com/kingcharleslzy-ai/dsh-purge/blob/master/release-notes.md)。
-```
 
 </details>
 
-### v1.7.13 — dsh-purge Community 1.7.13
+<details>
+<summary><b>v1.7.13</b> — 2026-11-13T17:53:15Z</summary>
 
-- 原发布时间：2026-11-13T17:53:15Z
-- SHA256：`c64284c77c3d88e36c99222c8e00564aa965c90e50d990752f45f72ccb59cb6d`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.13.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.13
 
 - **更新诊断更准确（#225）**：响应超过大小上限时显示上限与已知大小；主源和备用源都失败、或只有过期缓存时，检查结果标为未知，保留上次确认的版本，过期缓存不触发自动安装。完整列表不可用时，可只读查询 GitHub 当前正式版号供确认，但不把它当成可安装目标。
@@ -194,19 +157,12 @@
 验证：650 项测试通过 / 29 平台跳过；UI、文档预算、客户端一致性、发行包 smoke 通过。
 
 完整历史与诊断见 [release-notes.md](https://github.com/kingcharleslzy-ai/dsh-purge/blob/master/release-notes.md)。
-```
 
 </details>
 
-### v1.7.12 — dsh-purge Community 1.7.12
+<details>
+<summary><b>v1.7.12</b> — 2026-11-13T17:21:39Z</summary>
 
-- 原发布时间：2026-11-13T17:21:39Z
-- SHA256：`a4188c055e41d7c62e2edf659f0623699aa34d5d8ddb64ea8502dc2e9a77551b`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.12.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.12
 
 - **中文拒绝检测补齐**：先去掉行首列表符号与 `结论：` 等前缀，再识别对象后置句式。`这条我不做`、`这个我不做`、`结论：这份武器化实现我不出` 现在都会触发重试；此前 `refusalMatchIndex` 返回 -1，审计里没有任何 `refusal_retry` 事件。
@@ -218,19 +174,12 @@
 验证：646 项通过 / 29 平台跳过；构建、客户端一致性、面板与发行包 smoke 通过。真实模型矩阵在重开后按文档复跑。
 
 [完整历史日志](https://github.com/kingcharleslzy-ai/dsh-purge/blob/560eef21bf27fd6206da486b4fb7de8a503bfc59/release-notes.md)
-```
 
 </details>
 
-### v1.7.11 — dsh-purge Community 1.7.11
+<details>
+<summary><b>v1.7.11</b> — 2026-11-13T16:25:43Z</summary>
 
-- 原发布时间：2026-11-13T16:25:43Z
-- SHA256：`feb960b44096dfe38c32e12b1e16a1648ca35ba65bd5180b1f2d226915cb7b1a`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.7.11.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.7.11
 
 - **调优设置完整性（#221）**：`tuning.json` 损坏或不可读时不再回落到默认值并在下次保存时覆盖原件；只有文件缺失才使用默认值。CLI 与设置接口报告读取错误、保留损坏原件，错误信息不包含文件内容。同一 profile 的并发修改报告占用；有效配置中的未知字段继续保留。
@@ -240,19 +189,12 @@
 验证：全套 640 项通过 / 29 平台跳过；构建与发行包 smoke 通过。
 
 [完整历史日志](https://github.com/kingcharleslzy-ai/dsh-purge/blob/c5f1dc9c0bd0ee15f6c09944c0353d6a53df2c8e/release-notes.md)
-```
 
 </details>
 
-### v1.6.101 — dsh-purge Community 1.6.101
+<details>
+<summary><b>v1.6.101</b> — 2026-11-13T15:01:35Z</summary>
 
-- 原发布时间：2026-11-13T15:01:35Z
-- SHA256：`bcce0e3caeb4d9022a268cd71c1a7a8dd772556cebcb2e2e0acd8f215eda1930`
-- 文件：`CHANGELOG.md`、`SHA256SUMS.txt`、`dsh-purge-community-1.6.101.tgz`、`dsh-purge-community.tgz`
-
-<details><summary>更新日志全文</summary>
-
-```markdown
 # 1.6.101
 
 - **回退按钮默认隐藏，新增「会话外观」开关（#218 / #214）**：输入框里的 Purge 回退按钮默认不显示，已有显式开关值继续生效；面板与独立设置页都能在「更多 → 会话外观」切换，同一页面立即更新。CLI 继续读写同一个选项，切换后刷新页面即可。隐藏时仍保留草稿回填。
@@ -262,6 +204,6 @@
 验证：634 项全量测试通过，UI/面板构建检查、回退菜单与浏览器滚动测试通过；Chrome 1280/390/320 视口实际切换六个分类（移动端为窄视口，未做真机）。
 
 [完整历史日志](https://github.com/kingcharleslzy-ai/dsh-purge/blob/25ee972e9c0cef07fc89eab76068c11ffb60daeb/release-notes.md)
-```
 
 </details>
+
