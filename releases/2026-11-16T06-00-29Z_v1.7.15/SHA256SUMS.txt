@@ -1,0 +1,2 @@
+60ac160d84de731aeb420ed798c1e7f917a457f97aab10056c3c4ef2dcec6a85  dsh-purge-community-1.7.15.tgz
+60ac160d84de731aeb420ed798c1e7f917a457f97aab10056c3c4ef2dcec6a85  dsh-purge-community.tgz

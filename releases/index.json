@@ -1,72 +1,146 @@
 [
     {
-        "tag_name":  "v1.7.14",
-        "name":  "dsh-purge Community 1.7.14",
-        "published_at":  "2026-11-13T19:07:40Z",
-        "directory":  "2026-11-13T19-07-40Z_v1.7.14",
-        "tgz_size_kb":  2157.6,
-        "sha256":  "4dcbb23decbc80fa29455db62e175747d2bbd9c0b3dc3baf630431d158055bf0",
-        "assets":  [
-                       "CHANGELOG.md",
-                       "dsh-purge-community.tgz",
-                       "dsh-purge-community-1.7.14.tgz",
-                       "SHA256SUMS.txt"
-                   ]
+        "tag_name": "v1.7.18",
+        "name": "dsh-purge Community 1.7.18",
+        "published_at": "2026-11-16T08:15:03Z",
+        "created_at": "2026-11-16T08:11:49Z",
+        "directory": "2026-11-16T08-15-03Z_v1.7.18",
+        "tgz_name": "dsh-purge-community-1.7.18.tgz",
+        "tgz_size_kb": 2200.8,
+        "sha256": "7a1f102e378540c790116c32752e5cfda1068d1b21333ee9b052d6ea3f43b084",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.18.tgz",
+            "dsh-purge-community.tgz"
+        ]
     },
     {
-        "tag_name":  "v1.7.13",
-        "name":  "dsh-purge Community 1.7.13",
-        "published_at":  "2026-11-13T17:53:15Z",
-        "directory":  "2026-11-13T17-53-15Z_v1.7.13",
-        "tgz_size_kb":  2085.2,
-        "sha256":  "c64284c77c3d88e36c99222c8e00564aa965c90e50d990752f45f72ccb59cb6d",
-        "assets":  [
-                       "CHANGELOG.md",
-                       "dsh-purge-community.tgz",
-                       "dsh-purge-community-1.7.13.tgz",
-                       "SHA256SUMS.txt"
-                   ]
+        "tag_name": "v1.7.17",
+        "name": "dsh-purge Community 1.7.17",
+        "published_at": "2026-11-16T07:10:21Z",
+        "created_at": "2026-11-16T07:07:32Z",
+        "directory": "2026-11-16T07-10-21Z_v1.7.17",
+        "tgz_name": "dsh-purge-community-1.7.17.tgz",
+        "tgz_size_kb": 2169.9,
+        "sha256": "a8db8b6a7249fef226c394c5be1eddf0a154a36019a2704b9ed6f5faafba58a9",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.17.tgz",
+            "dsh-purge-community.tgz"
+        ]
     },
     {
-        "tag_name":  "v1.7.12",
-        "name":  "dsh-purge Community 1.7.12",
-        "published_at":  "2026-11-13T17:21:39Z",
-        "directory":  "2026-11-13T17-21-39Z_v1.7.12",
-        "tgz_size_kb":  2083.2,
-        "sha256":  "a4188c055e41d7c62e2edf659f0623699aa34d5d8ddb64ea8502dc2e9a77551b",
-        "assets":  [
-                       "CHANGELOG.md",
-                       "dsh-purge-community.tgz",
-                       "dsh-purge-community-1.7.12.tgz",
-                       "SHA256SUMS.txt"
-                   ]
+        "tag_name": "v1.7.16",
+        "name": "dsh-purge Community 1.7.16",
+        "published_at": "2026-11-16T06:53:11Z",
+        "created_at": "2026-11-16T06:49:56Z",
+        "directory": "2026-11-16T06-53-11Z_v1.7.16",
+        "tgz_name": "dsh-purge-community-1.7.16.tgz",
+        "tgz_size_kb": 2169.5,
+        "sha256": "7c6a0c81b6a33680fe6dcf6aec9c097592727860803b36890a95f7cc8e5ddc8f",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.16.tgz",
+            "dsh-purge-community.tgz"
+        ]
     },
     {
-        "tag_name":  "v1.7.11",
-        "name":  "dsh-purge Community 1.7.11",
-        "published_at":  "2026-11-13T16:25:43Z",
-        "directory":  "2026-11-13T16-25-43Z_v1.7.11",
-        "tgz_size_kb":  2080,
-        "sha256":  "feb960b44096dfe38c32e12b1e16a1648ca35ba65bd5180b1f2d226915cb7b1a",
-        "assets":  [
-                       "CHANGELOG.md",
-                       "dsh-purge-community.tgz",
-                       "dsh-purge-community-1.7.11.tgz",
-                       "SHA256SUMS.txt"
-                   ]
+        "tag_name": "v1.7.15",
+        "name": "dsh-purge Community 1.7.15",
+        "published_at": "2026-11-16T06:00:29Z",
+        "created_at": "2026-11-16T05:57:26Z",
+        "directory": "2026-11-16T06-00-29Z_v1.7.15",
+        "tgz_name": "dsh-purge-community-1.7.15.tgz",
+        "tgz_size_kb": 2166.6,
+        "sha256": "60ac160d84de731aeb420ed798c1e7f917a457f97aab10056c3c4ef2dcec6a85",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.15.tgz",
+            "dsh-purge-community.tgz"
+        ]
     },
     {
-        "tag_name":  "v1.6.101",
-        "name":  "dsh-purge Community 1.6.101",
-        "published_at":  "2026-11-13T15:01:35Z",
-        "directory":  "2026-11-13T15-01-35Z_v1.6.101",
-        "tgz_size_kb":  2079,
-        "sha256":  "bcce0e3caeb4d9022a268cd71c1a7a8dd772556cebcb2e2e0acd8f215eda1930",
-        "assets":  [
-                       "CHANGELOG.md",
-                       "dsh-purge-community.tgz",
-                       "dsh-purge-community-1.6.101.tgz",
-                       "SHA256SUMS.txt"
-                   ]
+        "tag_name": "v1.7.14",
+        "name": "dsh-purge Community 1.7.14",
+        "published_at": "2026-11-13T19:07:40Z",
+        "created_at": "2026-11-13T19:04:43Z",
+        "directory": "2026-11-13T19-07-40Z_v1.7.14",
+        "tgz_name": "dsh-purge-community-1.7.14.tgz",
+        "tgz_size_kb": 2157.6,
+        "sha256": "4dcbb23decbc80fa29455db62e175747d2bbd9c0b3dc3baf630431d158055bf0",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.14.tgz",
+            "dsh-purge-community.tgz"
+        ]
+    },
+    {
+        "tag_name": "v1.7.13",
+        "name": "dsh-purge Community 1.7.13",
+        "published_at": "2026-11-13T17:53:15Z",
+        "created_at": "2026-11-13T17:50:31Z",
+        "directory": "2026-11-13T17-53-15Z_v1.7.13",
+        "tgz_name": "dsh-purge-community-1.7.13.tgz",
+        "tgz_size_kb": 2085.2,
+        "sha256": "c64284c77c3d88e36c99222c8e00564aa965c90e50d990752f45f72ccb59cb6d",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.13.tgz",
+            "dsh-purge-community.tgz"
+        ]
+    },
+    {
+        "tag_name": "v1.7.12",
+        "name": "dsh-purge Community 1.7.12",
+        "published_at": "2026-11-13T17:21:39Z",
+        "created_at": "2026-11-13T17:18:37Z",
+        "directory": "2026-11-13T17-21-39Z_v1.7.12",
+        "tgz_name": "dsh-purge-community-1.7.12.tgz",
+        "tgz_size_kb": 2083.2,
+        "sha256": "a4188c055e41d7c62e2edf659f0623699aa34d5d8ddb64ea8502dc2e9a77551b",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.12.tgz",
+            "dsh-purge-community.tgz"
+        ]
+    },
+    {
+        "tag_name": "v1.7.11",
+        "name": "dsh-purge Community 1.7.11",
+        "published_at": "2026-11-13T16:25:43Z",
+        "created_at": "2026-11-13T16:22:49Z",
+        "directory": "2026-11-13T16-25-43Z_v1.7.11",
+        "tgz_name": "dsh-purge-community-1.7.11.tgz",
+        "tgz_size_kb": 2080.0,
+        "sha256": "feb960b44096dfe38c32e12b1e16a1648ca35ba65bd5180b1f2d226915cb7b1a",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.7.11.tgz",
+            "dsh-purge-community.tgz"
+        ]
+    },
+    {
+        "tag_name": "v1.6.101",
+        "name": "dsh-purge Community 1.6.101",
+        "published_at": "2026-11-13T15:01:35Z",
+        "created_at": "2026-11-13T14:58:52Z",
+        "directory": "2026-11-13T15-01-35Z_v1.6.101",
+        "tgz_name": "dsh-purge-community-1.6.101.tgz",
+        "tgz_size_kb": 2079.0,
+        "sha256": "bcce0e3caeb4d9022a268cd71c1a7a8dd772556cebcb2e2e0acd8f215eda1930",
+        "assets": [
+            "CHANGELOG.md",
+            "SHA256SUMS.txt",
+            "dsh-purge-community-1.6.101.tgz",
+            "dsh-purge-community.tgz"
+        ]
     }
 ]
