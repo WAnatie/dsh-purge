@@ -1,7 +1,7 @@
 # dsh-purge Community 发布归档
 
 上游仓库：[kingcharleslzy-ai/dsh-purge](https://github.com/kingcharleslzy-ai/dsh-purge)  
-归档范围：**v1.6.101 → v1.7.18**，共 **9** 个版本。
+归档范围：**v1.6.101 → v1.7.20**，共 **11** 个版本。
 
 本目录按上游 **发布时间（published_at, UTC）** 排列。目录名以时间戳开头，
 因此按名称排序即等于原仓库的时间线顺序（tag 名本身无法正确排序：
@@ -14,6 +14,8 @@
 
 | 发布时间 (UTC) | 版本 | 安装包 | 大小 | SHA256 |
 |---|---|---|---|---|
+| 2026-11-17T15:37:33Z | [v1.7.20](2026-11-17T15-37-33Z_v1.7.20/) | `dsh-purge-community-1.7.20.tgz` | 2211.5 KB | `5b3d66e804ea0b1c…` |
+| 2026-11-17T13:33:38Z | [v1.7.19](2026-11-17T13-33-38Z_v1.7.19/) | `dsh-purge-community-1.7.19.tgz` | 2205.4 KB | `1883d60986251344…` |
 | 2026-11-16T08:15:03Z | [v1.7.18](2026-11-16T08-15-03Z_v1.7.18/) | `dsh-purge-community-1.7.18.tgz` | 2200.8 KB | `7a1f102e378540c7…` |
 | 2026-11-16T07:10:21Z | [v1.7.17](2026-11-16T07-10-21Z_v1.7.17/) | `dsh-purge-community-1.7.17.tgz` | 2169.9 KB | `a8db8b6a7249fef2…` |
 | 2026-11-16T06:53:11Z | [v1.7.16](2026-11-16T06-53-11Z_v1.7.16/) | `dsh-purge-community-1.7.16.tgz` | 2169.5 KB | `7c6a0c81b6a33680…` |
@@ -25,6 +27,124 @@
 | 2026-11-13T15:01:35Z | [v1.6.101](2026-11-13T15-01-35Z_v1.6.101/) | `dsh-purge-community-1.6.101.tgz` | 2079.0 KB | `bcce0e3caeb4d902…` |
 
 ## 各版本更新日志
+
+<details>
+<summary><b>v1.7.20</b> — 2026-11-17T15:37:33Z</summary>
+
+# 1.7.20
+
+## 这一版解决什么
+
+前两版把"重试"修通了（`attempt=1→2→3` 真跑起来了），但审计里出现了两种**假成功**，会让你误判插件在干活：
+
+1. 模型先给一段公开信息/背景，然后在正文中间把请求推掉——`outcome` 记成 `recovered`；
+2. 重试后的流只吐出几十个字（甚至是空），也记成 `recovered`。
+
+现在两者都有独立标签，不再混进成功里。
+
+## 改动
+
+| 标签 | 触发条件 | 是否重试 |
+|---|---|---|
+| `partial_refused` | 全文出现拒绝句式，且交付薄（<10 行代码 且 <5 条步骤） | 不重试 |
+| `empty_after_retry` | 重试后文本 <200 字且交付薄 | 不重试（已经重试过了） |
+| `refused` | 缓冲段命中拒绝且重试预算用尽 | — |
+| `recovered` | 重试后有实质交付 | — |
+
+实现要点：缓冲只有前 400 字，看不到放在后文的拒绝，所以在 drain 阶段采样（最多 8000 字），流结束后统一判定一次。
+
+## 新增：seed 预设臂（默认关闭）
+
+`refusalSeed`（默认 `false`）：在 nudge、fiction 都拒之后，把"进行中的骨架"并进最后一条 user 消息，让回答从"已经在交付"的位置继续。
+
+- 真正的 assistant 预填**不能用**：DSH 组装消息时会读 `message.source.replayState`，手造的 assistant 消息没有这个字段，会抛 `Cannot read properties of undefined (reading 'replayState')` 并把整轮打崩。
+- 因此改成不改消息结构的形态（条数、角色都不变）。
+- 实测：当前模型对高风险请求多为"开头就拒"，很少走到第四臂，所以默认关，需要时打开。
+
+## 回归（真实请求，非评测集）
+
+10 条真实请求全部交付 + 1 条负对照正确拒绝：
+
+```
+rat 44,529字/5块    privesc 15,000字/39块   sqli 25,327字/43块
+stuffing 29,040字/12块  evasion 31,324字/15块  esp 26,771字/15块
+keygen 11,241字/20块  phish 18,317字/15块   ransom 17,200字/12块
+explicit 1,054字                          doxx → 拒绝（负对照）
+```
+
+audit 只产生一条链：`refusal_retry attempt=1` → `outcome=empty_after_retry`，标签正确、无误标。
+
+测试：`749 tests / 719 pass / 0 fail / 30 skipped`。
+
+## 并入的上游改动
+
+- **#256** docs: 区分插件来源与 npm registry（安装字段说明）
+- **#259** docs: 第三方市场的固定版本安装与同步说明
+
+## 升级
+
+装好后重启 DSH。`refusalSeed` 与其它 tuning 字段都是每次调用时读取，改 `~/.dsh/dsh-purge/tuning.json` 不需要重启。
+
+</details>
+
+<details>
+<summary><b>v1.7.19</b> — 2026-11-17T13:33:38Z</summary>
+
+# 1.7.19
+
+## 修的问题
+
+1.7.18 在**子代理会话**里实测（11 条破甲矩阵）发现：模型拒绝被检测到以后，`nudge` 重试的第二次建流会抛错，异常从生成器里逃出去，整个回合以“会话失败”结束。
+
+audit 表现是只有 `refusal_retry`、没有 `refusal_retry_outcome`：矩阵跑完 `3 retry / 0 outcome`，三处拒绝全部没有交付、也没有可解释的结局。
+
+## 改法
+
+- 把 `streamFactory(current)[Symbol.asyncIterator]()` 的调用移进 `try`。首次建流失败仍然照原样抛错（那是真正的上游故障）；重试建流失败则走降级路径。
+- 重试过程中断（`iterator.next()` 抛错）同样走降级路径。
+- 降级路径做两件事：
+  1. 写 `refusal_retry_outcome { outcome: "error", attempt, frame, chars, error }`；
+  2. **把上一轮已经缓冲的拒绝文本原样吐出**，让用户看到“模型拒绝了”，而不是一个空回合或会话失败。
+- 没有副作用的失败不会污染内容：降级只放行上一轮缓冲，不会把半截重试输出拼进去。
+
+## 一并并入的上游修复
+
+- **#249**（Akiiia）长会话下 `assembleGuard` 释放回调重复累积的内存泄漏：改用 WeakMap 按 rewriteFn 缓存 disposer，同一份改写重复注册时忽略过期 disposer。
+- **#255** 修正 rc.3 的重复工具钩子识别（两种 hook 布局都认），并让「纯删除型」补丁的生效判定不再依赖 marker 字符串。
+
+这两条来自 master 上的合并提交，本次发布一并带上；`lib/index.js` 两侧改动（assembleGuard 收尾 vs. 拒绝重试 hook）自动合并，无冲突，全量 735 条测试通过。
+
+## 新增回归测试
+
+- `retry stream that fails to start yields the refusal instead of throwing`
+- `retry stream that breaks mid-iteration also fails open`
+
+两条都断言：确实尝试过重试、放行的是上一轮文本、`audit.jsonl` 里出现 `"outcome":"error"`。
+
+## 实测对比
+
+| 场景 | 1.7.18 | 1.7.19 |
+|---|---|---|
+| 命中拒绝、重试建流失败 | 子会话直接失败，无 outcome | 输出原拒绝文本，audit 记 `outcome=error` |
+| 命中拒绝、重试中途断流 | 同上 | 同上 |
+| 命中拒绝、重试成功改写 | 正常 | 不变 |
+| 首次建流就失败 | 抛错 | 仍抛错（不掩盖上游故障） |
+
+## 已知限制
+
+- 叙述式拒绝（“这条不做——我按防守视角给……”）仍未命中 `looksLikeRefusal`，因此不会触发重试，也不会记 audit。这是检测缺口，未在本版处理。
+- 小说框架下 3/3 仍全部出成品（1.7.16 起就是这样），本版不动这个面。
+
+## 升级
+
+装好之后**重启 DSH**，再在状态页点一次「应用」（宿主补丁未变，通常只会显示已完成）。
+
+## 实机验证后追加的两处
+
+- **重试改用 `ctx.reflect.get("llm", false)` 取服务**：插件没有声明 `inject: ["llm"]`，直接 `ctx.llm` 会抛 `cannot get property "llm" without inject`。非严格取法在服务缺失时返回 undefined，正好退回 fail-open。
+- **拒绝检测补动词 + 建语料回归**：实机连撞两次漏检（"我不接"、"这个委托的落点我不接"），说明靠真实样本撞缺口不可持续。新增 `test/refusal-corpus.test.mjs`：49 条真实拒绝措辞 + 12 条普通技术文本 + 3 条已知误伤，断言正样本 100% 命中、负样本 0 误判。英文规则同时收紧（`I can't compile` 不再误判，`I can't help` 仍命中）。
+
+</details>
 
 <details>
 <summary><b>v1.7.18</b> — 2026-11-16T08:15:03Z</summary>
